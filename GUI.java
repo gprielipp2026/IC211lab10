@@ -36,17 +36,17 @@ public class GUI extends JFrame {
     cost = new Output("cost");
     
     // display setup
-    JPanel top = new JPanel(new FlowLayout());
+    JPanel top = new JPanel(new FlowLayout(FlowLayout.CENTER));
     top.add(loan);
     top.add(interest);
     top.add(payment);
 
-    JPanel center = new JPanel(new FlowLayout());
-    center.add(payoff, FlowLayout.CENTER);
-    center.add(button, FlowLayout.RIGHT);
+    JPanel center = new JPanel(new FlowLayout(FlowLayout.CENTER));
+    center.add(payoff);
+    center.add(button);
 
-    JPanel bottom = new JPanel(new FlowLayout());
-    bottom.add(cost, FlowLayout.CENTER);
+    JPanel bottom = new JPanel(new FlowLayout(FlowLayout.CENTER));
+    bottom.add(cost);
     
     // create the necessary display
     add(top);
