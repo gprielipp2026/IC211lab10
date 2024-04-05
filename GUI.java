@@ -57,7 +57,6 @@ public class GUI extends JFrame {
     pack();
   }
 
-
   public static void main(String[] args) {
     GUI app = new GUI();
 
