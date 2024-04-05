@@ -23,8 +23,10 @@ public class Rate extends JPanel {
     val = sin;
     lab = new JLabel(val);
     lab.setPreferredSize(new Dimension(180,40));
-    cbox = new JComboBox<double>(
-      new double{3.50, 3.75, 4.00, 4.25, 4.50, 4.75, 5.00, 5.25, 5.50, 5.75, 6.00, 6.25, 6.50, 6.75, 7.00, 7.25, 7.50});
+
+    double[] options ={3.50, 3.75, 4.00, 4.25, 4.50, 4.75, 5.00, 5.25, 5.50, 5.75, 6.00, 6.25, 6.50, 6.75, 7.00, 7.25, 7.50}; 
+
+    cbox = new JComboBox<double>( options );
     cbox.addActionListener(new Selector());
     add(lab);
     add(cbox);
