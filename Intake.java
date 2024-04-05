@@ -14,7 +14,7 @@ public class Intake extends JPanel{
 
     public Intake(String name) {
         //Create the intake elements
-        JLabel phrase = newJLabel(name);
+        JLabel phrase = new JLabel(name);
         input = new JTextField("0.00", 20);
         input.setEditable(true);
 
