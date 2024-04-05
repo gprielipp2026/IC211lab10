@@ -15,10 +15,9 @@ public class GUI {
     JFrame f = new JFrame();
     Strip s1 = new InTake("Loan Amount ");
     Strip s2 = new Rate("Interest Rate ");
-    //Not really intake, need to add new class
     Strip s3 = new Intake("Monthly Payment ");
-    
     Strip s4 = new InTake("Months to Pay off ");
+    //Not really intake, need to add new class
     Strip s5 = new Intake("Cost ");
     f.add(s1, BorderLayout.NORTH);
     f.add(s2, BorderLayout.NORTH);

@@ -2,25 +2,25 @@
  * MIDN SCHMIDT 265646
  * MIDN PRIELIPP 265112
  * Lab 10
- * Intake.java
+ * Output.java
  ****************************/
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class InTake extends JPanel{
-    private JTextField input;
+public class Output extends JPanel{
+    private JTextField output;
 
-    public InTake(String name) {
+    public Output(String name) {
         //Create the intake elements
         JLabel phrase = newJLabel(name);
-        input = new JTextField("0.00", 20);
-        input.setEditable(true);
+        output = new JTextField("0.00", 20);
+        output.setEditable(false);
 
         
         //Add the ActionListener
-
+        
         //Add panel to frame
     }
 }
