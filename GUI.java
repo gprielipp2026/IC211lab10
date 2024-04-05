@@ -9,25 +9,59 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GUI {
+public class GUI extends JFrame {
+  // inputs
+  private Intake loan;
+  private Intake payment;
+  private Rate interest;
+  private JButton button;
+  
+  // outputs
+  private Calc calc;
+  private Output payoff;
+  private Output cost;
+
+  public GUI() {
+    super(new SpringLayout());
+
+    // instantiate all fields
+    loan = new Intake("loan amount");
+    payment = new Intake("monthly payment");
+    interest = new Rate("interest rate");
+    button = new JButton("calculate");
+    
+    calc = null;// create a new one on button press
+    payoff = new Output("months to payoff");
+    cost = new Output("cost");
+    
+    // display setup
+    JPanel top = new JPanel(new FlowLayout());
+    top.add(loan);
+    top.add(interest);
+    top.add(payment);
+    top.pack();
+
+    JPanel center = new JPanel(new FlowLayout());
+    center.add(payoff, FlowLayout.CENTER);
+    center.add(button, FlowLayout.RIGHT);
+    center.pack();
+
+    JPanel bottom = new JPanel(new FlowLayout());
+    bottom.add(cost, FlowLayout.CENTER);
+    bottom.pack();
+    
+    // create the necessary display
+    add(top);
+    add(center);
+    add(bottom);
+    pack();
+  }
+
 
   public static void main(String[] args) {
-    JFrame f = new JFrame();
-    Strip s1 = new InTake("Loan Amount ");
-    Strip s2 = new Rate("Interest Rate ");
-    //Not really intake, need to add new class
-    Strip s3 = new Intake("Monthly Payment ");
-    
-    Strip s4 = new InTake("Months to Pay off ");
-    Strip s5 = new Intake("Cost ");
-    f.add(s1, BorderLayout.NORTH);
-    f.add(s2, BorderLayout.NORTH);
-    f.add(s3, BorderLayout.NORTH);
-    f.add(s4, BorderLayout.CENTER);
-    f.add(s5, BorderLayout.SOUTH);
-    f.pack();
-    f.setVisible(true);
-    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    GUI app = new GUI();
+
+    app.setVisible(true);
   }
 
 }
