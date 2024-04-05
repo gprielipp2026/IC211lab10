@@ -12,7 +12,7 @@ import java.awt.event.*;
 public class Intake extends JPanel{
     private JTextField input;
 
-    public Output(String name) {
+    public Intake(String name) {
         //Create the intake elements
         JLabel phrase = newJLabel(name);
         input = new JTextField("0.00", 20);
