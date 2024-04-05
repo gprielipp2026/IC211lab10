@@ -23,7 +23,7 @@ public class GUI extends JFrame {
 
   public GUI() {
     super();
-    setLayout(new SpringLayout());
+    setLayout(new GridLayout(3,1));
 
     // instantiate all fields
     loan = new Intake("loan amount");
