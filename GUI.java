@@ -22,7 +22,8 @@ public class GUI extends JFrame {
   private Output cost;
 
   public GUI() {
-    super(new SpringLayout());
+    super();
+    setLayout(new SpringLayout());
 
     // instantiate all fields
     loan = new Intake("loan amount");
@@ -39,16 +40,13 @@ public class GUI extends JFrame {
     top.add(loan);
     top.add(interest);
     top.add(payment);
-    top.pack();
 
     JPanel center = new JPanel(new FlowLayout());
     center.add(payoff, FlowLayout.CENTER);
     center.add(button, FlowLayout.RIGHT);
-    center.pack();
 
     JPanel bottom = new JPanel(new FlowLayout());
     bottom.add(cost, FlowLayout.CENTER);
-    bottom.pack();
     
     // create the necessary display
     add(top);
