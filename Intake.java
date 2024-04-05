@@ -10,17 +10,20 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Intake extends JPanel{
-    private JTextField input;
+  private JTextField input;
 
-    public Intake(String name) {
-        //Create the intake elements
-        JLabel phrase = new JLabel(name);
-        input = new JTextField("0.00", 20);
-        input.setEditable(true);
+  public Intake(String name) {
+    //Create the intake elements
+    super();
 
-        
-        //Add the ActionListener
-        
-        //Add panel to frame
-    }
+    JLabel phrase = new JLabel(name);
+    input = new JTextField("0.00", 20);
+    input.setEditable(true);
+
+    add(phrase);
+    add(input);
+    //Add the ActionListener
+
+    //Add panel to frame
+  }
 }

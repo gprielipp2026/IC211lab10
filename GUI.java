@@ -52,6 +52,9 @@ public class GUI extends JFrame {
     add(top);
     add(center);
     add(bottom);
+
+    setLocation(100,100);
+    
     pack();
   }
 
