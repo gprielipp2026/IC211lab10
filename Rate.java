@@ -30,6 +30,12 @@ public class Rate extends JPanel {
     add(lab);
     add(cbox);
   }
+
+  public double getValue() {
+    int i = cbox.getSelectedIndex();
+    double val = cbox.getItemAt(i);
+    return val;
+  }
   
   public void update() {
     //int i = cbox.getSelectedIndex();

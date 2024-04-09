@@ -57,12 +57,12 @@ public class Calc {
   /**
    * Get how many months calculated
    */
-  public int getMonths() { return months; }
+  public String getMonths() { return String.valueOf(months); }
 
   /**
    * Get how much it costs
    */
-  public double getCost() { return total; }
+  public String getCost() { return String.valueOf(total); }
 
 
   /**

@@ -25,4 +25,9 @@ public class Output extends JPanel{
 
     //Add panel to frame
   }
+
+  // write to the text field
+  public void setValue(String value) {
+    output.setText(value);
+  }
 }

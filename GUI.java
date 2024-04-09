@@ -10,6 +10,41 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class GUI extends JFrame {
+  
+  private class EventListener implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+      onUpdate();
+    }
+  }
+
+  private class Exiter extends WindowAdapter {
+    public void windowClosing(WindowEvent e) {
+      System.exit(0);
+    }
+  }
+
+  // update/calculate interest, months, total cost
+  private void onUpdate() {
+    double amt = loan.getValue();
+    double rate = interest.getValue();
+    double pay = payment.getValue(); 
+
+    if (amt <= 0 || pay <= 0)
+    {
+      // set cost and payoff to "" and return
+      cost.setValue("");
+      payoff.setValue("");
+      return;
+    }
+
+    // computes in the constructor
+    // amount of months and total cost
+    calc = new Calc(amt, rate, pay);
+
+    cost.setValue(calc.getCost());
+    payoff.setValue(calc.getMonths());
+  }
+
   // inputs
   private Intake loan;
   private Intake payment;
@@ -30,6 +65,7 @@ public class GUI extends JFrame {
     payment = new Intake("monthly payment");
     interest = new Rate("interest rate");
     button = new JButton("calculate");
+    button.addActionListener(new EventListener());
     
     calc = null;// create a new one on button press
     payoff = new Output("months to payoff");
@@ -55,6 +91,8 @@ public class GUI extends JFrame {
 
     setLocation(100,100);
     
+    addWindowListener(new Exiter());
+
     pack();
   }
 

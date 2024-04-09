@@ -26,4 +26,16 @@ public class Intake extends JPanel{
 
     //Add panel to frame
   }
+
+  // get the text field value
+  public double getValue() {
+    try { 
+      double val = Double.parseDouble( input.getText() );
+
+      return val;
+    } catch (Exception e)
+    {
+      return 0.00;
+    }
+  }
 }
